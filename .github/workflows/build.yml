@@ -52,7 +52,7 @@ jobs:
           python-version: '3.11'
 
       - name: Installing Dependencies
-        run: sudo apt-get install -y libmtdev1 libsdl2;  
+        run: sudo apt-get install -y libmtdev1 libsdl2-2.0-0;  
       
       - name: Installing pyinstaller
         run: pip3 install pyinstaller
