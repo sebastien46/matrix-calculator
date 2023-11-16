@@ -61,7 +61,9 @@ jobs:
         run: pip3 install kivy kivymd
         
       - name: Building AppImage
-        run: pyinstaller ./.github/linux.spec --log-level DEBUG
+        uses: coactions/setup-xvfb@v1.0.1
+        with:
+          run: pyinstaller ./.github/linux.spec --log-level DEBUG
 
       - uses: actions/upload-artifact@v3
         with:
