@@ -3,7 +3,7 @@ from kivymd import hooks_path as kivymd_hooks_path
 from kivy.tools.packaging.pyinstaller_hooks import get_deps_minimal
 block_cipher = None
 
-dependencies = get_deps_minimal(audio=None, camera=None, spelling=None, video=None, window='sdl2')
+dependencies = get_deps_minimal(audio=None, camera=None, spelling=None, video=None, window=True)
 
 def get_dependencies(included, mode):
     extras = dependencies[mode]
