@@ -3,10 +3,10 @@ from kivymd import hooks_path as kivymd_hooks_path
 from kivy.tools.packaging.pyinstaller_hooks import get_deps_minimal
 block_cipher = None
 
-depedencies = get_deps_minimal(audio=None, video=None, window=True)
+dependencies = get_deps_minimal(audio=None, video=None, window=True)
 
 def get_dependencies(included, mode):
-    extras = depedencies[mode]
+    extras = dependencies[mode]
     included.extend(extras)
     return included
 
