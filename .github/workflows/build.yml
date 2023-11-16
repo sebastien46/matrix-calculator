@@ -27,7 +27,7 @@ jobs:
         run: pip3 install kivy-deps.sdl2 kivy-deps.glew
 
       - name: Installing Kivy/MD
-        run: pip3 install kivy kivymd
+        run: pip3 install kivy
         
       - name: Building EXE
         run: export KIVY_GL_BACKEND="angle_sdl2";
@@ -58,8 +58,8 @@ jobs:
       - name: Installing pyinstaller
         run: pip3 install pyinstaller
 
-      - name: Installing Kivy/MD
-        run: pip3 install kivy[full] kivymd
+      - name: Installing Kivy
+        run: pip3 install kivy
         
       - name: Building EXE
         uses: GabrielBB/xvfb-action@v1 # Virtual x11 server to run GUI
