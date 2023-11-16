@@ -18,16 +18,16 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4.7.1
         with:
-          python-version: '3.8'
+          python-version: '3.12'
       
       - name: Installing pyinstaller
-        run: pip3 install pyinstaller==4.2
+        run: pip3 install pyinstaller
       
       - name: Installing kivy-deps
         run: pip3 install kivy-deps.sdl2 kivy-deps.glew
 
       - name: Installing Kivy/MD
-        run: pip3 install kivy==2.0.0 kivymd==0.104.1
+        run: pip3 install kivy kivymd
         
       - name: Building EXE
         run: export KIVY_GL_BACKEND="angle_sdl2";
@@ -49,7 +49,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4.7.1
         with:
-          python-version: '3.8'
+          python-version: '3.12'
 
       - name: Installing Dependencies
         run:  sudo add-apt-repository ppa:kivy-team/kivy;
@@ -59,7 +59,7 @@ jobs:
         run: pip3 install pyinstaller==4.2
 
       - name: Installing Kivy/MD
-        run: pip3 install kivy[full]==2.0.0 kivymd==0.104.1
+        run: pip3 install kivy[full] kivymd
         
       - name: Building EXE
         uses: GabrielBB/xvfb-action@v1 # Virtual x11 server to run GUI
