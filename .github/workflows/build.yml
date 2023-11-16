@@ -40,7 +40,7 @@ jobs:
           path: ./dist/Matrix Calculator.exe
 
   linux:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
 
