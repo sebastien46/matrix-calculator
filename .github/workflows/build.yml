@@ -56,7 +56,7 @@ jobs:
               sudo apt-get install -y libmtdev1;  
       
       - name: Installing pyinstaller
-        run: pip3 install pyinstaller==4.2
+        run: pip3 install pyinstaller
 
       - name: Installing Kivy/MD
         run: pip3 install kivy[full] kivymd
