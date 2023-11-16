@@ -58,7 +58,7 @@ jobs:
         run: pip3 install pyinstaller
 
       - name: Installing Kivy
-        run: pip3 install kivy
+        run: pip3 install kivy kivymd
         
       - name: Building AppImage
         uses: GabrielBB/xvfb-action@v1 # Virtual x11 server to run GUI
