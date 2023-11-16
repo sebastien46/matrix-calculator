@@ -61,9 +61,7 @@ jobs:
         run: pip3 install kivy kivymd
         
       - name: Building AppImage
-        uses: coactions/setup-xvfb@v1 # Virtual x11 server to run GUI
-        with:
-          run: pyinstaller ./.github/linux.spec --log-level DEBUG
+        run: pyinstaller ./.github/linux.spec --log-level DEBUG
 
       - uses: actions/upload-artifact@v3
         with:
