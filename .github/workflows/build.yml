@@ -18,13 +18,12 @@ jobs:
         with:
           command: buildozer -v android debug
           buildozer_version: stable
-          filename: ./bin/matrixcalc-v8a-debug.apk
           
       - name: Uploading Artifacts to Github
         uses: actions/upload-artifact@v3
         with:
           name: Android APK
-          path: ./bin/matrixcalc-v8a-debug.apk
+          path: ${{ steps.buildozer.outputs.filename }}
   
   windows:
     runs-on: windows-latest
