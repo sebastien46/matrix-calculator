@@ -22,13 +22,13 @@ source.include_exts = py,png,jpg,kv,atlas,ttf
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-source.exclude_dirs = bin, samples, .vscode, .buildozer
+source.exclude_dirs = bin, samples, .vscode, .buildozer, .github
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 3.2
+version = 3.3.1
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -36,7 +36,7 @@ version = 3.2
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.0.0,kivymd==0.104.0
+requirements = python3,kivy,kivymd
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -88,10 +88,10 @@ android.presplash_color = #0c335c
 #android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 29
+android.api = 33
 
 # (int) Minimum API your APK will support.
-#android.minapi = 22
+android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 29
@@ -219,7 +219,7 @@ android.logcat_filters = *:S python:D
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = armeabi-v7a
+android.arch = armeabi-v8a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
