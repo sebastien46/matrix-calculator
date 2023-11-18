@@ -1,18 +1,38 @@
 name: build
-
-# Controls when the action will run. 
 on: [push, workflow_dispatch]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  windows:
-    # The type of runner that the job will run on
-    runs-on: windows-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  android:
+    runs-on: ubuntu-latest
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.1
+        with:
+          python-version: '3.11'
+  
+      - name: Installing buildozer & Cython
+        run: pip3 install buildozer Cython
+
+      - name: Installing apt dependencies
+        run: sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+
+      - name: Building APK
+        run: export PATH=$PATH:~/.local/bin
+             buildozer -v android debug
+
+      - name: Uploading Artifacts to Github
+        uses: actions/upload-artifact@v3
+        with:
+          name: Android APK
+          path: ./bin/Matrix Calculator.apk
+        
+  
+  windows:
+    runs-on: windows-latest
+    steps:
       - uses: actions/checkout@v4
       
       - name: Setup Python
@@ -37,7 +57,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Windows EXE
-          path: ./dist/Matrix Calculator.exe
+          path: ./dist/Matrix Calculator.apk
 
   linux:
     runs-on: ubuntu-latest
@@ -65,7 +85,8 @@ jobs:
         with:
           run: pyinstaller ./.github/linux.spec --log-level DEBUG
 
-      - uses: actions/upload-artifact@v3
+      - name: Uploading Artifacts to Github
+        uses: actions/upload-artifact@v3
         with:
           name: Linux AppImage
           path: ./dist/MatrixCalculator.AppImage
