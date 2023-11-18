@@ -13,22 +13,18 @@ jobs:
         with:
           python-version: '3.11'
   
-      - name: Installing buildozer & Cython
-        run: pip3 install buildozer Cython
-
-      - name: Installing apt dependencies
-        run: sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-
-      - name: Building APK
-        run: export PATH=$PATH:~/.local/bin;
-             buildozer -v android debug
-
+      - name: Build APK
+        uses: ArtemSBulgakov/buildozer-action@v1.1.3
+        with:
+          command: buildozer -v android debug
+          buildozer_version: stable
+          filename: ./bin/matrixcalc-v8a-debug.apk
+          
       - name: Uploading Artifacts to Github
         uses: actions/upload-artifact@v3
         with:
           name: Android APK
-          path: ./bin/Matrix Calculator.apk
-        
+          path: ./bin/matrixcalc-v8a-debug.apk
   
   windows:
     runs-on: windows-latest
