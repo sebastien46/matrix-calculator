@@ -24,7 +24,6 @@ jobs:
 
       - name: Building APK
         run: buildozer -v android release;
-             buildozer -v android clean
           
       - name: Uploading Artifacts to Github
         uses: actions/upload-artifact@v3
