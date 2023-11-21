@@ -13,8 +13,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
       - name: Installing dependencies
-        run: sudo apt-get install -y openjdk-17-jdk libncurses5-dev libncursesw5-dev libtinfo5 cmake
+        run: sudo apt-get install -y libncurses5-dev libncursesw5-dev libtinfo5 cmake
   
       - name: Installing Cython
         run: pip3 install 'Cython<3'
