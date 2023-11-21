@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get install -y openjdk-17-jdk libncurses5-dev libncursesw5-dev libtinfo5 cmake
   
       - name: Installing Cython
-        run: pip3 install Cython<=3 --install-option="--no-cython-compile" --no-cache-dir
+        run: pip3 install Cython<=3
         
       - name: Installing buildozer
         run: pip3 install buildozer
