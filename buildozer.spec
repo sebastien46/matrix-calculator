@@ -94,7 +94,7 @@ android.api = 34
 android.minapi = 24
 
 # (int) Android SDK version to use
-#android.sdk = 29
+android.sdk = 34
 
 # (str) Android NDK version to use
 android.ndk = 25c
@@ -123,7 +123,7 @@ android.ndk_api = 24
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-# android.accept_sdk_license = True
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.renpy.android.PythonActivity
