@@ -17,7 +17,8 @@ jobs:
         run: sudo apt-get install -y openjdk-17-jdk zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev
   
       - name: Installing buildozer & Cython
-        run: pip3 install buildozer Cython <= 3
+        run: pip3 install buildozer;
+             pip3 install Cython<=3 --install-option="--no-cython-compile"
 
       - name: Building APK
         run: buildozer -v android debug
