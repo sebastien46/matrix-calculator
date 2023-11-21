@@ -16,9 +16,11 @@ jobs:
       - name: Installing dependencies
         run: sudo apt-get install -y openjdk-17-jdk libncurses5-dev libncursesw5-dev libtinfo5 cmake
   
-      - name: Installing buildozer & Cython
-        run: pip3 install Cython<=3 --install-option="--no-cython-compile";
-             pip3 install buildozer
+      - name: Installing Cython
+        run: pip3 install Cython<=3 --install-option="--no-cython-compile"
+        
+      - name: Installing buildozer
+        run: pip3 install buildozer
 
       - name: Building APK
         run: buildozer -v android debug
