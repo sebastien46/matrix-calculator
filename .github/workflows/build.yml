@@ -35,12 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Matrix Calculator ARMv8 64-bit
-          path: ./bin/matrixcalc-3.3.1-arm64-v8a-release.apk
-      - name: Uploading armeabi-v7a Artifact to Github
-        uses: actions/upload-artifact@v3
-        with:
-          name: Matrix Calculator ARMv7 32-bit
-          path: ./bin/matrixcalc-3.3.1-armeabi-v7a-release.apk
+          path: ./bin/matrixcalc-3.3.1-arm64-v8a-release-unsigned.apk
   
   windows:
     runs-on: windows-latest
