@@ -32,7 +32,7 @@ jobs:
         run: buildozer -v android release;
           
       - name: Uploading arm64-v8a Artifact to Github
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Matrix Calculator ARMv8 64-bit
           path: ./bin/matrixcalc-3.3.1-arm64-v8a-release-unsigned.apk
@@ -61,7 +61,7 @@ jobs:
              pyinstaller ./.github/windows.spec
         shell: bash
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Windows EXE
           path: ./dist/Matrix Calculator.exe
@@ -93,7 +93,7 @@ jobs:
           run: pyinstaller ./.github/linux.spec --log-level DEBUG
 
       - name: Uploading Artifacts to Github
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Linux AppImage
           path: ./dist/MatrixCalculator.AppImage
